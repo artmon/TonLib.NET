@@ -42,7 +42,7 @@ namespace TonLibDotNet
         /// <remarks>See also <see cref="TonClientTimeout"/> and <see cref="ConcurrencyTimeout"/>.</remarks>
         /// <seealso cref="TonClientTimeout"/>
         /// <seealso cref="ConcurrencyTimeout"/>
-        public TimeSpan TonClientSyncTimeout { get; set; } = TimeSpan.FromSeconds(60);
+        public TimeSpan TonClientSyncTimeout { get; set; } = TimeSpan.FromSeconds(600);
 
         /// <summary>
         /// TonLib timeout when making calls to tonlib/LiteServer.

@@ -44,6 +44,7 @@ namespace TonLibDotNet.Samples
             // Surprise! Even for testnet, wallet.ton.org uses mainnet value :(
             walletId = 698983191;
 
+            var privateKey = await tonClient.ImportKey(new ExportedKey(Program.DestMnemonic.Split(' ').ToList()));
             var inputKey = await tonClient.ImportKey(new ExportedKey(Program.TestMnemonic.Split(' ').ToList()));
             var initialAccountState = new V3InitialAccountState() { PublicKey = inputKey.PublicKey, WalletId = walletId };
             var address = await tonClient.GetAccountAddress(initialAccountState, 0, 0);
@@ -55,10 +56,10 @@ namespace TonLibDotNet.Samples
             }
 
             // Step 2: Build message and action
-            var msg = new Types.Msg.Message(new AccountAddress(Program.TestAddress))
+            var msg = new Types.Msg.Message(new AccountAddress(Program.DestAddress))
             {
                 Data = new Types.Msg.DataText(TonUtils.Text.EncodeAsBase64("Sent using https://github.com/justdmitry/TonLib.NET")),
-                Amount = TonUtils.Coins.ToNano(0.01M),
+                Amount = TonUtils.Coins.ToNano(0.1M),
                 SendMode = 1,
             };
 

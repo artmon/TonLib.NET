@@ -8,7 +8,8 @@ namespace TonLibDotNet.Samples
         private readonly ITonClient tonClient;
         private readonly ILogger logger;
 
-        private const string account = "EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N"; // TON Foundation wallet
+        // private const string account = "EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N"; // TON Foundation wallet
+        private const string account = "EQANIzk7ALM76S-5t3LU2WFcyqyA4oVjkSX2dBESWOlMatfx"; // TON Foundation wallet
 
         public AccountBalanceAndTransactions(ITonClient tonClient, ILogger<AccountBalanceAndTransactions> logger)
         {
